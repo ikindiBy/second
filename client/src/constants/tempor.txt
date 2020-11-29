@@ -1,0 +1,71 @@
+   ServerName flowermood.by
+    ServerAlias www.flowermood.by
+
+    # Tell Apache and Passenger where your app's code directory is
+    DocumentRoot /var/www/flowermood.by/code
+
+
+RewriteEngine On
+#  RewriteBase /
+#  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{RE} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+    # I've comented it because errore
+   #  PassengerAppRoot /var/www/flowermood.by/code
+
+    # Tell Passenger that your app is a Node.js app
+     #  PassengerAppType node
+    #  PassengerStartupFile app.js
+
+      # Proxy
+#    ProxyRequests Off
+#   ProxyPreserveHost On
+#   ProxyVia Full
+#   <Proxy *>
+#      Require all granted
+#   </Proxy>
+
+#   <Location /nodejs>
+ #     ProxyPass http://127.0.0.1:8080
+  #    ProxyPassReverse http://127.0.0.1:8080
+  # </Location>
+ProxyRequests On
+ProxyPass / http://localhost:3000
+ProxyPassReverse / http://localhost:3000
+
+    # Relax Apache security settings
+    <Directory /var/www/flowermood.by/code>
+      Allow from all
+      Options -MultiViews
+      # Uncomment this if you're on Apache >= 2.4:
+      Require all granted
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+
+VirtualHost flowermood.by:80>
+
+        ServerName flowermood.by
+        ServerAlias www.flowermood.by
+        ServerAdmin ikindiBy@gmail.com
+
+        RewriteEngine On
+        RewriteCond %{HTTP:Upgrade} =websocket [NC]
+        RewriteRule /(.*)           ws://localhost:999/$1 [P,L]
+        RewriteCond %{HTTP:Upgrade} !=websocket [NC]
+        RewriteRule /(.*)           http://localhost:999/$1 [P,L]
+
+        ProxyPassReverse / http://localhost:999
+
+</VirtualHost>
+
+
+
+
+Jun 02 16:14:38 flowermood.by apache2[30655]: AH00526: Syntax error on line 11 of /etc/apache2/sites-enabled/flowermood.by.conf
+Jun 02 16:14:38 flowermood.by apache2[30655]: Invalid command 'RewriteEngine', perhaps misspelled or defined by a module not in
+>>>
+FIX ::::::: https://ixnfo.com/reshenie-oshibki-invalid-command-rewriteengine.html

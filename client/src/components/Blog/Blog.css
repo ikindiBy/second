@@ -1,0 +1,21 @@
+.articles-container {
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.articles-container__list {
+    padding: 0 144px;
+}
+
+@media (max-width: 960px) {
+    .articles-container__list {
+        padding: 0 24px;
+    }
+}
+
+@media (max-width: 460px) {
+    .articles-container__list {
+        padding: 0 8px;
+    }
+}

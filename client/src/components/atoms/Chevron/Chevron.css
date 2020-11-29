@@ -1,0 +1,38 @@
+/* chevrons */
+
+.chevron {
+    text-align: center;
+    color: rgba(1, 77, 51, .95);
+}
+
+.chevron__span::before {
+	border-style: solid;
+	border-width: 0.25em 0.25em 0 0;
+    content: '';
+    position: relative;
+	display: inline-block;
+    height: 0.5em;
+    width: 0.5em;
+	left: 0.15em;
+	top: 0.15em;
+	vertical-align: top;
+}
+
+.chevron__span.chevron__span--top:before {
+	transform: rotate(-45deg);
+}
+
+.chevron__span.chevron__span--right:before {
+	left: 0;
+	transform: rotate(45deg);
+}
+
+.chevron__span.chevron__span--bottom:before {
+	top: 0;
+	transform: rotate(135deg);
+}
+
+.chevron__span.chevron__span--left:before {
+	left: 0.25em;
+	transform: rotate(-135deg);
+}

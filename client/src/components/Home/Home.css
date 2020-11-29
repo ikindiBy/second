@@ -1,0 +1,17 @@
+.block-tiles{
+    max-width: 1200px;
+    margin: 16px auto;
+}
+
+.block-tiles__row {
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.block-tiles__title {
+    margin-left: 24px;
+}
+
+

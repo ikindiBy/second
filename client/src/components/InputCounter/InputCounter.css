@@ -1,0 +1,39 @@
+.input-counter {
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-counter input {
+    height: 100%;
+    width: 72px;
+    font-size: 1.1rem;
+    text-align: center;
+    border: 1px solid rgba(1, 77, 51, .85);
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.input-counter__button {
+    height: 100%;
+    width: 40px;
+    background-color: rgba(1, 77, 51, .85);
+    color: rgb(208, 219, 215);
+    border: none;
+    font-size: 1.2rem;
+}
+
+.input-counter input[type=number]::-webkit-inner-spin-button, 
+.input-counter input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+}
+
+.input-counter__button--disabled {
+    background-color: rgba(21, 43, 35, 0.85);
+}
+
+.input-counter__button--disabled:hover {
+    box-shadow: none;
+}
