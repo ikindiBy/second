@@ -1,5 +1,5 @@
 {
-  "name": "second",
+  "name": "flowermood",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -27,6 +27,7 @@
       "react-app/jest"
     ]
   },
+  "proxy": "http://localhost:5000",
   "browserslist": {
     "production": [
       ">0.2%",
