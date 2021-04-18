@@ -25,6 +25,12 @@ export const groups = [
     {
         groupId: 20,
         name: 'Вазоны и подвесы',
+        subGroup: [
+            {
+                subGroupId: 201,
+                name: 'Петуния в подвесах',
+            },
+        ]
     },
     // {
     //     groupId: 30,
@@ -42,7 +48,7 @@ export const products = [
             '/img/img_1_02.jpg',
         ],
         description: 'Кустовая петуния.',
-        // price: 2.5,
+        price: 2.5,
         groupId: 10,
         subGroupId: 101,
         type: 'Вегетативная',
@@ -55,6 +61,18 @@ export const products = [
         enimies: 'Тля, белокрылка, паутинный клещ',
         diseas: 'Мучная роса, черная ножка',
     },
+    {
+        productId: 2001,
+        groupId: 20,
+        subGroupId: 201,
+        title: 'Петуния розовая в подвесном вазоне',
+        imageSrc: '/img/pot_petun_pink.jpg',
+        imagesGallery: [
+            '/img/pot_petun_pink.jpg',
+        ],
+        description: 'Кустовая петуния.',
+        price: 5,
+    }
 ];
 
 export const slides = [
