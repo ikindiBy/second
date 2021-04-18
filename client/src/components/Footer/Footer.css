@@ -1,14 +1,14 @@
 .footer-wrapper {
     width: 100%;
     height: 80px;
-    background-color: #282c34;
+    background-color: #004d40;
 }
   
 .footer-container {
     max-width: 1200px;
     height: 100%;
     margin: 0 auto;
-    background-color: #343842;
+    background-color: #004d40;
     color: bisque;
     display: flex;
     flex-direction: column;

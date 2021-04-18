@@ -1,26 +1,14 @@
-import React from 'react';
-import { Switch, Route } from "react-router-dom";
+import React, { useContext } from 'react';
 
-import Home from '../Home';
-import Shop from '../Shop';
-import ArticlePage from '../ArticlePage';
-import DetailPage from '../DetailPage';
-import Blog from '../Blog';
-import Calendar from '../Calendar';
-import Basket from '../Basket';
+import { AuthContext } from '../../context/AuthContext'
+import { useRoutes } from '../../routes';
 
 const Main = () => {
+    const { isAuthenticated } = useContext(AuthContext);
+    const routes = useRoutes(isAuthenticated);
     return (
         <main className="main-wrapper">
-            <Switch>
-              <Route path="/catalog" component={Shop}/>
-              <Route path='/page/:id' render={(props) => (<ArticlePage {...props} />)}/>
-              <Route path='/product/:id' render={(props) => (<DetailPage {...props} />)}/>
-              <Route path="/blog" component={Blog}/>
-              <Route path="/calendar" component={Calendar}/>
-              <Route path="/mylist" component={Basket}/>
-              <Route path="/" component={Home}/>
-            </Switch>
+            {routes}
         </main>
     )
 };
