@@ -31,7 +31,6 @@ async function start() {
             }
         );
 
-        console.log(' ___ ::: DB is con ::: _______');
         app.listen(PORT, () => console.log(`App has been started on port ${PORT}!`));
     } catch (e){
         console.log(`Error:: ${e}`);
